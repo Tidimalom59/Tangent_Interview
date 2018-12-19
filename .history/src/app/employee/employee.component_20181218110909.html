@@ -1,0 +1,21 @@
+<ul class="list-group">
+  <li *ngFor="let employee of employees" class="list-group-item d-flex justify-content-between">
+
+    <div class="col-1 text-left">{{employee.phone_number}}</div>
+    <div class="col-4">{{employee.email}}</div>
+    <div class="col">{{employee.github_user}}</div>
+    <div class="col text-right">{{employee.birth_date}}</div>
+    <div class="col">{{employee.gender}}</div>
+    <div class="col">{{employee.race}}</div>
+    <div class="col">{{employee.years_worked}}</div>
+    <div class="col">{{employee.age}}</div>
+    <div class="col">{{employee.days_to_birthday}}</div>
+
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let position of employees">
+    <div class="col-6">{{position.id}}</div>
+  </li>
+</ul>
