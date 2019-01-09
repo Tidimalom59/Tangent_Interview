@@ -1,0 +1,23 @@
+.sidebar {
+    border-radius: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 56px;
+    left: 235px;
+    width: 235px;
+    margin-left: -235px;
+    margin-bottom: 48px;
+    border: none;
+    border-radius: 0;
+    overflow-y: auto;
+    background-color: #222;
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+    white-space: nowrap;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}

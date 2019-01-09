@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="reviewing" >
+    <br>
+    <br>
+    {{reviews.date}}
+    <h3>Hello World On Top Of The World!!</h3>
+  </div>
+</div>
+<li *ngFor="let review of reviews" class="list-group-item d-flex justify-content-between">
+    <div class="col-3">{{review.date}}</div>
+    <div class="col-3"><a href=''>{{review.email}}</a></div>
+    <div class="col-3 text-left"><a href=''>{{review.phone_number}}</a></div>
+    <div class="col-3">{{review.position?.name}</div>
+
+  </li>

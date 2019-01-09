@@ -1,0 +1,799 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">Tangent Agent Grad-111</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- <form class="form-inline mr-auto">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+    <li class="nav-item form-inline mr-auto">
+      <a class="nav-link employees" href="employee">Employees</a>
+      <a class="nav-link leave" href="leave">Leave</a>
+    </li>
+
+    <ul class="navbar-nav my-2 my-lg-0">
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user"></i> pravingordhan <b class="caret"></b>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="profile">
+            <i class="fa fa-fw fa-user"></i> Profile
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-fw fa-gear"></i> Settings
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/login']">
+            <i class="fa fa-fw fa-power-off"></i> Log Out
+          </a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<nav class="sidebar nav-collapse collapse" id="sidebar" sidebar="">
+  <ul class="side-nav" id="side-nav">
+    <li class="active">
+      <a routerlink="dashboard" href="#/app/dashboard"><i class="fa fa-home"></i> <span class="name">Dashboard</span></a>
+    </li>
+    <li>
+      <a routerlink="package" href="#/app/package"><i class="fa fa-database"></i> <span class="name">LB Package <sup class="text-warning fw-bold">4.0</sup></span></a>
+    </li>
+    <li class="accordion-group panel">
+      <a class="accordion-toggle collapsed" data-parent="#side-nav" data-toggle="collapse" href="#forms-collapse">
+         <i class="fa fa-pencil"></i>
+         <span class="name">Forms</span>
+       </a>
+      <ul aria-expanded="false" class="accordion-body collapse" id="forms-collapse">
+        <li><a routerlink="form/account" href="#/app/form/account">Account</a></li>
+        <li><a routerlink="form/article" href="#/app/form/article">Article</a></li>
+        <li><a routerlink="form/elements" href="#/app/form/elements">Elements</a></li>
+        <li><a routerlink="form/validation" href="#/app/form/validation">Validation</a></li>
+        <li><a routerlink="form/wizard" href="#/app/form/wizard">Wizard</a></li>
+      </ul>
+    </li>
+    <li class="accordion-group panel">
+      <a class="accordion-toggle collapsed" data-parent="#side-nav" data-toggle="collapse" href="#stats-collapse"><i class="fa fa-area-chart"></i> <span class="name">Statistics</span></a>
+      <ul aria-expanded="false" class="accordion-body collapse" id="stats-collapse">
+        <li><a routerlink="statistics/stats" href="#/app/statistics/stats">Stats</a></li>
+        <li><a routerlink="statistics/charts" href="#/app/statistics/charts">Charts</a></li>
+        <li><a routerlink="statistics/realtime" href="#/app/statistics/realtime">Realtime</a></li>
+      </ul>
+    </li>
+    <li class="accordion-group panel">
+      <a class="accordion-toggle collapsed" data-parent="#side-nav" data-toggle="collapse" href="#ui-collapse"><i class="fa fa-magic"></i> <span class="name">User Interface</span></a>
+      <ul aria-expanded="false" class="accordion-body collapse" id="ui-collapse">
+        <li><a routerlink="ui/buttons" href="#/app/ui/buttons">Buttons</a></li>
+        <li><a routerlink="ui/dialogs" href="#/app/ui/dialogs">Dialogs</a></li>
+        <li><a routerlink="ui/notifications" href="#/app/ui/notifications">Notifications</a></li>
+        <li><a routerlink="ui/icons" href="#/app/ui/icons">Icons</a></li>
+        <li><a routerlink="ui/tabs" href="#/app/ui/tabs">Tabs</a></li>
+        <li><a routerlink="ui/accordion" href="#/app/ui/accordion">Accordion</a></li>
+      </ul>
+    </li>
+    <li class="accordion-group panel">
+      <a class="accordion-toggle collapsed" data-parent="#side-nav" data-toggle="collapse" href="#components-collapse"><i class="fa fa-tree"></i> <span class="name">Components</span></a>
+      <ul aria-expanded="false" class="accordion-body collapse" id="components-collapse">
+        <li><a routerlink="components/calendar" href="#/app/components/calendar">Calendar <sup class="text-danger fw-bold">ng2</sup></a></li>
+        <li><a routerlink="components/maps" href="#/app/components/maps">Maps</a></li>
+        <li><a routerlink="components/gallery" href="#/app/components/gallery">Gallery <sup class="text-danger fw-bold">ng2</sup></a></li>
+        <li><a routerlink="components/fileupload" href="#/app/components/fileupload">Fileupload</a></li>
+      </ul>
+    </li>
+    <li class="accordion-group panel">
+      <a class="accordion-toggle collapsed" data-parent="#side-nav" data-toggle="collapse" href="#tables-collapse"><i class="fa fa-cog"></i> <span class="name">Tables</span></a>
+      <ul aria-expanded="false" class="accordion-body collapse" id="tables-collapse">
+        <li><a routerlink="tables/static" href="#/app/tables/static">Static</a></li>
+        <li><a routerlink="tables/dynamic" href="#/app/tables/dynamic">Dynamic <sup class="text-danger fw-bold">ng2</sup></a></li>
+      </ul>
+    </li>
+    <li class="accordion-group panel">
+      <a class="accordion-toggle collapsed" data-parent="#side-nav" data-toggle="collapse" href="#widgets-collapse"><i class="fa fa-th"></i> <span class="name">Widgets</span></a>
+      <ul aria-expanded="false" class="accordion-body collapse" id="widgets-collapse">
+        <li><a routerlink="widgets/basic" href="#/app/widgets/basic">Basic</a></li>
+        <li><a routerlink="widgets/live" href="#/app/widgets/live">Live</a></li>
+      </ul>
+    </li>
+    <li class="accordion-group panel">
+      <a class="accordion-toggle collapsed" data-parent="#side-nav" data-toggle="collapse" href="#special-collapse"><i class="fa fa-leaf"></i> <span class="name">Special</span></a>
+      <ul aria-expanded="false" class="accordion-body collapse" id="special-collapse">
+        <li><a routerlink="special/search" href="#/app/special/search">Search <sup class="text-warning fw-bold">new</sup></a></li>
+        <li><a routerlink="special/invoice" href="#/app/special/invoice">Invoice</a></li>
+        <li><a routerlink="special/inbox" href="#/app/special/inbox">Inbox &nbsp; <span class="badge badge-danger">3</span></a></li>
+        <li><a routerlink="/login" href="#/login">Login</a></li>
+        <li><a routerlink="/error" href="#/error">Error Page</a></li>
+        <li><a routerlink="/landing" href="#/landing">Landing</a></li>
+      </ul>
+    </li>
+    <li class="accordion-group panel">
+      <a class="accordion-toggle collapsed" data-parent="#side-nav" data-toggle="collapse" href="#menu-collapse"><i class="fa fa-folder-open"></i> <span class="name">Menu Levels</span></a>
+      <ul aria-expanded="false" class="accordion-body collapse" id="menu-collapse">
+        <li><a href="#">Item 1.1</a></li>
+        <li><a href="#">Item 1.2</a></li>
+        <li><a href="#">Item 1.3</a></li>
+      </ul>
+    </li>
+  </ul>
+  
+  <h5 class="sidebar-nav-title">Labels <a class="action-link" href="#"><i class="glyphicon glyphicon-plus"></i></a></h5>
+  
+  <ul class="sidebar-labels">
+    <li>
+      <a href="#">
+        
+        <i class="fa fa-circle text-warning"></i>
+        <span class="label-name">My Recent</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-circle text-gray"></i>
+        <span class="label-name">Starred</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-circle text-danger"></i>
+        <span class="label-name">Background</span>
+      </a>
+    </li>
+  </ul>
+  
+  <h5 class="sidebar-nav-title">Projects</h5>
+  
+  <div class="sidebar-alerts">
+    <div class="alert fade show">
+      <a aria-hidden="true" class="close" data-dismiss="alert" href="#">×</a>
+      <span class="text-white fw-semi-bold">Sales Report</span> <br>
+      <div class="progress progress-xs bg-blue-light mt-xs mb-0">
+        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="16" class="progress-bar progress-xs" role="progressbar" style="width: 16%"></div>
+      </div>
+      <small>Calculating x-axis bias... 65%</small>
+    </div>
+    <div class="alert fade show">
+      <a aria-hidden="true" class="close" data-dismiss="alert" href="#">×</a>
+      <span class="text-white fw-semi-bold">Personal Responsibility</span> <br>
+      <div class="progress progress-xs bg-blue-light mt-xs mb-0">
+        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="23" class="progress-bar progress-xs bg-danger" role="progressbar" style="width: 23%"></div>
+      </div>
+      <small>Provide required notes</small>
+    </div>
+  </div>
+  </nav>
+
+  <div class="wrap col-md-9">
+      <main class="content view-animate fade-up" id="content" role="main" style="margin-top: 0px;">
+          <div class="loading-overlay" style="opacity: 0;">
+            <div class="sk-fading-circle">
+              <div class="sk-circle1 sk-circle"></div>
+              <div class="sk-circle2 sk-circle"></div>
+              <div class="sk-circle3 sk-circle"></div>
+              <div class="sk-circle4 sk-circle"></div>
+              <div class="sk-circle5 sk-circle"></div>
+              <div class="sk-circle6 sk-circle"></div>
+              <div class="sk-circle7 sk-circle"></div>
+              <div class="sk-circle8 sk-circle"></div>
+              <div class="sk-circle9 sk-circle"></div>
+              <div class="sk-circle10 sk-circle"></div>
+              <div class="sk-circle11 sk-circle"></div>
+              <div class="sk-circle12 sk-circle"></div>
+            </div>
+          </div>
+          <div class="router-component" style="opacity: 1;">
+            <router-outlet></router-outlet>
+            <h2 class="page-title">Dashboard
+        <small>Statistics and more</small>
+      </h2>
+      <div class="row">
+        <div class="col-xl-8">
+          <section class="widget" widget="">
+            <header>
+              <h4>
+                Visits
+                <small>
+                  Based on a three months data
+                </small>
+              </h4>
+              <div class="widget-controls">
+                <a href="#" title="Options"><i class="glyphicon glyphicon-cog"></i></a>
+                <a data-widgster="expand" href="#" title="Expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                <a data-widgster="collapse" href="#" title="Collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                <a data-widgster="close" href="#" title="Close"><i class="glyphicon glyphicon-remove"></i></a>
+              </div>
+            </header>
+            <div class="widget-body m-0">
+              <div nvd3-chart="">
+                <svg class="nvd3-svg" style="height: 200px;"><g class="nvd3 nv-wrap nv-lineChart" transform="translate(28,30)"><g><g class="nv-legendWrap nvd3-svg" transform="translate(0,-30)"><g class="nvd3 nv-legend" transform="translate(0,5)"><g transform="translate(934.6989326477051,5)"><g class="nv-series" transform="translate(0,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(67, 128, 191); fill-opacity: 1; stroke: rgb(67, 128, 191);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">Unique</text></g><g class="nv-series" transform="translate(69.18528747558594,5)"><circle class="nv-legend-symbol" r="5" style="stroke-width: 2; fill: rgb(56, 176, 94); fill-opacity: 1; stroke: rgb(56, 176, 94);"></circle><text text-anchor="start" class="nv-legend-text" dy=".32em" dx="8" fill="#000">Visits</text></g></g></g></g><g class="nv-focus"><g class="nv-background"><rect width="1062" height="140"></rect></g><g class="nv-x nv-axis nvd3-svg" transform="translate(0,140)"><g class="nvd3 nv-wrap nv-axis"><g><g class="tick" transform="translate(102.57615176005747,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Oct 25</text></g><g class="tick" transform="translate(208.5387954382184,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Oct 31</text></g><g class="tick" transform="translate(314.5014391163793,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Nov 06</text></g><g class="tick" transform="translate(420.4640827945403,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Nov 12</text></g><g class="tick" transform="translate(526.4267264727011,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Nov 18</text></g><g class="tick" transform="translate(632.3893701508621,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Nov 23</text></g><g class="tick" transform="translate(738.352013829023,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Nov 29</text></g><g class="tick" transform="translate(844.3146575071839,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Dec 05</text></g><g class="tick" transform="translate(950.2773011853449,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Dec 11</text></g><g class="tick" transform="translate(1056.2399448635058,0)" style="opacity: 1;"><line y2="-140" x2="0"></line><text dy=".71em" y="7" transform="translate(0,0)" style="text-anchor: middle;" x="0">Dec 17</text></g><path class="domain" d="M0,0V0H1062V0"></path><text class="nv-axislabel" text-anchor="middle" y="36" x="531"></text></g></g></g><g class="nv-y nv-axis nvd3-svg"><g class="nvd3 nv-wrap nv-axis"><g><g class="tick" transform="translate(0,91.35135135135135)" style="opacity: 1;"><line x2="1062" y2="0"></line><text dy=".32em" x="-3" y="0" style="text-anchor: end;">100</text></g><g class="tick" transform="translate(0,37.2972972972973)" style="opacity: 1;"><line x2="1062" y2="0"></line><text dy=".32em" x="-3" y="0" style="text-anchor: end;">200</text></g><path class="domain" d="M0,0H0V140H0"></path><text class="nv-axislabel" transform="rotate(-90)" y="-50" x="-70" style="text-anchor: middle;"></text></g></g></g><g class="nv-linesWrap nvd3-svg"><g class="nvd3 nv-wrap nv-line" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-33037"><rect width="1062" height="140"></rect></clipPath></defs><g clip-path="url(#nv-edge-clip-33037)"><g class="nv-groups"><g class="nv-group nv-series-0" style="stroke-opacity: 1; stroke-width: 1.5; fill-opacity: 0.5; fill: rgb(67, 128, 191); stroke: rgb(67, 128, 191);"><path class="nv-area" d="M0,140L36.62068965517241,140L73.24137931034483,140L109.86206896551724,140L146.48275862068965,140L183.1034482758621,140L219.72413793103448,140L256.3448275862069,140L292.9655172413793,140L329.58620689655174,140L366.2068965517242,140L402.8275862068965,140L439.44827586206895,140L476.0689655172414,140L512.6896551724138,140L549.3103448275863,140L585.9310344827586,140L622.5517241379309,140L659.1724137931035,140L695.7931034482758,140L732.4137931034484,140L769.0344827586207,140L805.655172413793,140L842.2758620689656,140L878.8965517241379,140L915.5172413793102,140L952.1379310344828,140L988.7586206896551,140L1025.3793103448277,140L1062,140L1062,129.1891891891892L1025.3793103448277,106.48648648648648L988.7586206896551,87.56756756756758L952.1379310344828,103.24324324324326L915.5172413793102,112.43243243243242L878.8965517241379,0L842.2758620689656,18.918918918918912L805.655172413793,123.78378378378379L769.0344827586207,137.83783783783784L732.4137931034484,138.91891891891893L695.7931034482758,138.3783783783784L659.1724137931035,138.3783783783784L622.5517241379309,138.3783783783784L585.9310344827586,139.45945945945945L549.3103448275863,138.91891891891893L512.6896551724138,140L476.0689655172414,136.75675675675677L439.44827586206895,135.13513513513513L402.8275862068965,135.13513513513513L366.2068965517242,135.13513513513513L329.58620689655174,138.3783783783784L292.9655172413793,137.83783783783784L256.3448275862069,138.91891891891893L219.72413793103448,140L183.1034482758621,140L146.48275862068965,138.91891891891893L109.86206896551724,137.2972972972973L73.24137931034483,137.83783783783784L36.62068965517241,140L0,136.21621621621622Z"></path><path class="nv-line" d="M0,136.21621621621622L36.62068965517241,140L73.24137931034483,137.83783783783784L109.86206896551724,137.2972972972973L146.48275862068965,138.91891891891893L183.1034482758621,140L219.72413793103448,140L256.3448275862069,138.91891891891893L292.9655172413793,137.83783783783784L329.58620689655174,138.3783783783784L366.2068965517242,135.13513513513513L402.8275862068965,135.13513513513513L439.44827586206895,135.13513513513513L476.0689655172414,136.75675675675677L512.6896551724138,140L549.3103448275863,138.91891891891893L585.9310344827586,139.45945945945945L622.5517241379309,138.3783783783784L659.1724137931035,138.3783783783784L695.7931034482758,138.3783783783784L732.4137931034484,138.91891891891893L769.0344827586207,137.83783783783784L805.655172413793,123.78378378378379L842.2758620689656,18.918918918918912L878.8965517241379,0L915.5172413793102,112.43243243243242L952.1379310344828,103.24324324324326L988.7586206896551,87.56756756756758L1025.3793103448277,106.48648648648648L1062,129.1891891891892"></path></g><g class="nv-group nv-series-1" style="stroke-opacity: 1; stroke-width: 1.5; fill-opacity: 0.5; fill: rgb(56, 176, 94); stroke: rgb(56, 176, 94);"><path class="nv-line" d="M0,138.3783783783784L36.62068965517241,139.45945945945945L73.24137931034483,136.75675675675677L109.86206896551724,137.83783783783784L146.48275862068965,135.67567567567568L183.1034482758621,137.83783783783784L219.72413793103448,137.83783783783784L256.3448275862069,138.91891891891893L292.9655172413793,138.3783783783784L329.58620689655174,140L366.2068965517242,140L402.8275862068965,136.21621621621622L439.44827586206895,135.13513513513513L476.0689655172414,136.21621621621622L512.6896551724138,139.45945945945945L549.3103448275863,138.91891891891893L585.9310344827586,137.2972972972973L622.5517241379309,138.91891891891893L659.1724137931035,139.45945945945945L695.7931034482758,139.45945945945945L732.4137931034484,134.05405405405406L769.0344827586207,134.05405405405406L805.655172413793,132.43243243243242L842.2758620689656,123.24324324324324L878.8965517241379,107.02702702702703L915.5172413793102,92.43243243243244L952.1379310344828,85.94594594594595L988.7586206896551,84.32432432432432L1025.3793103448277,96.75675675675674L1062,104.32432432432434"></path></g></g><g class="nv-scatterWrap nvd3-svg" clip-path="url(#nv-edge-clip-33037)"><g class="nvd3 nv-wrap nv-scatter nv-chart-33037" transform="translate(0,0)"><defs><clipPath id="nv-edge-clip-33037"><rect width="1062" height="140"></rect></clipPath></defs><g clip-path=""><g class="nv-groups"><g class="nv-group nv-series-0 nv-noninteractive" style="stroke-opacity: 1; fill-opacity: 0.5; fill: rgb(67, 128, 191); stroke: rgb(67, 128, 191);"><path class="nv-point nv-point-0" transform="translate(0,136.21621621621622)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-1" transform="translate(36.62068965517241,140)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-2" transform="translate(73.24137931034483,137.83783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-3" transform="translate(109.86206896551724,137.2972972972973)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-4" transform="translate(146.48275862068965,138.91891891891893)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-5" transform="translate(183.1034482758621,140)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-6" transform="translate(219.72413793103448,140)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-7" transform="translate(256.3448275862069,138.91891891891893)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-8" transform="translate(292.9655172413793,137.83783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-9" transform="translate(329.58620689655174,138.3783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-10" transform="translate(366.2068965517242,135.13513513513513)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-11" transform="translate(402.8275862068965,135.13513513513513)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-12" transform="translate(439.44827586206895,135.13513513513513)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-13" transform="translate(476.0689655172414,136.75675675675677)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-14" transform="translate(512.6896551724138,140)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-15" transform="translate(549.3103448275863,138.91891891891893)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-16" transform="translate(585.9310344827586,139.45945945945945)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-17" transform="translate(622.5517241379309,138.3783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-18" transform="translate(659.1724137931035,138.3783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-19" transform="translate(695.7931034482758,138.3783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-20" transform="translate(732.4137931034484,138.91891891891893)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-21" transform="translate(769.0344827586207,137.83783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-22" transform="translate(805.655172413793,123.78378378378379)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-23" transform="translate(842.2758620689656,18.918918918918912)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-24" transform="translate(878.8965517241379,0)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-25" transform="translate(915.5172413793102,112.43243243243242)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-26" transform="translate(952.1379310344828,103.24324324324326)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-27" transform="translate(988.7586206896551,87.56756756756758)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-28" transform="translate(1025.3793103448277,106.48648648648648)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-29" transform="translate(1062,129.1891891891892)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path></g><g class="nv-group nv-series-1 nv-noninteractive" style="stroke-opacity: 1; fill-opacity: 0.5; fill: rgb(56, 176, 94); stroke: rgb(56, 176, 94);"><path class="nv-point nv-point-0" transform="translate(0,138.3783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-1" transform="translate(36.62068965517241,139.45945945945945)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-2" transform="translate(73.24137931034483,136.75675675675677)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-3" transform="translate(109.86206896551724,137.83783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-4" transform="translate(146.48275862068965,135.67567567567568)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-5" transform="translate(183.1034482758621,137.83783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-6" transform="translate(219.72413793103448,137.83783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-7" transform="translate(256.3448275862069,138.91891891891893)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-8" transform="translate(292.9655172413793,138.3783783783784)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-9" transform="translate(329.58620689655174,140)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-10" transform="translate(366.2068965517242,140)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-11" transform="translate(402.8275862068965,136.21621621621622)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-12" transform="translate(439.44827586206895,135.13513513513513)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-13" transform="translate(476.0689655172414,136.21621621621622)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-14" transform="translate(512.6896551724138,139.45945945945945)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-15" transform="translate(549.3103448275863,138.91891891891893)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-16" transform="translate(585.9310344827586,137.2972972972973)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-17" transform="translate(622.5517241379309,138.91891891891893)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-18" transform="translate(659.1724137931035,139.45945945945945)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-19" transform="translate(695.7931034482758,139.45945945945945)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-20" transform="translate(732.4137931034484,134.05405405405406)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-21" transform="translate(769.0344827586207,134.05405405405406)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-22" transform="translate(805.655172413793,132.43243243243242)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-23" transform="translate(842.2758620689656,123.24324324324324)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-24" transform="translate(878.8965517241379,107.02702702702703)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-25" transform="translate(915.5172413793102,92.43243243243244)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-26" transform="translate(952.1379310344828,85.94594594594595)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-27" transform="translate(988.7586206896551,84.32432432432432)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-28" transform="translate(1025.3793103448277,96.75675675675674)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path><path class="nv-point nv-point-29" transform="translate(1062,104.32432432432434)" d="M0,2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,-2.256758334191025A2.256758334191025,2.256758334191025 0 1,1 0,2.256758334191025Z"></path></g></g><g class="nv-point-paths"></g></g><g class="nv-point-clips"></g></g></g></g></g></g><g class="nv-interactive"><g class=" nv-wrap nv-interactiveLineLayer"><g class="nv-interactiveGuideLine"></g></g></g></g><g class="nv-focusWrap"></g></g></g></svg>
+              </div>
+              <div class="visits-info well well-sm">
+                <div class="row">
+                  <div class="col-md-3 col-6">
+                    <div class="key"><i class="fa fa-users"></i> Total Traffic</div>
+                    <div class="value">24 541 <i class="fa fa-caret-up color-green"></i></div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="key"><i class="fa fa-bolt"></i> Unique Visits</div>
+                    <div class="value">14 778 <i class="fa fa-caret-down color-red"></i></div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="key"><i class="fa fa-plus-square"></i> Revenue</div>
+                    <div class="value">$3 583.18 <i class="fa fa-caret-up color-green"></i></div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="key"><i class="fa fa-user"></i> Total Sales</div>
+                    <div class="value">$59 871.12 <i class="fa fa-caret-down color-red"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="widget" widget="">
+            <header>
+              <h4>
+                Traffic Sources
+                <small>
+                  One month tracking
+                </small>
+              </h4>
+              <div class="widget-controls">
+                <a data-widgster="expand" href="#" title="Expand" style="display: none;"><i class="glyphicon glyphicon-plus"></i></a>
+                <a data-widgster="collapse" href="#" title="Collapse"><i class="glyphicon glyphicon-minus"></i></a>
+                <a data-widgster="close" href="#" title="Close"><i class="glyphicon glyphicon-remove"></i></a>
+              </div>
+            </header>
+            <div class="widget-table-overflow widget-body">
+              <table class="table table-striped table-lg mt-sm mb-0 sources-table">
+                <thead>
+                <tr>
+                  <th class="source-col-header">Source</th>
+                  <th>Amount</th>
+                  <th>Change</th>
+                  <th class="d-sm-down-none">Percent.,%</th>
+                  <th>Target</th>
+                  <th class="chart-col-header d-sm-down-none">Trend</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><span class="badge badge-important">Direct</span></td>
+                  <td>713</td>
+                  <td><strong class="color-green">+53</strong></td>
+                  <td class="d-sm-down-none">+12</td>
+                  <td>900</td>
+                  <td class="chart-cell d-sm-down-none">
+                    <div id="direct-trend" jq-sparkline=""><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-warning">Refer</span></td>
+                  <td>562</td>
+                  <td><strong>+84</strong></td>
+                  <td class="d-sm-down-none">+64</td>
+                  <td>500</td>
+                  <td class="chart-cell d-sm-down-none">
+                    <div id="refer-trend" jq-sparkline=""><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-success">Social</span></td>
+                  <td>148</td>
+                  <td><strong class="color-red">-12</strong></td>
+                  <td class="d-sm-down-none">+3</td>
+                  <td>180</td>
+                  <td class="chart-cell d-sm-down-none">
+                    <div id="social-trend" jq-sparkline=""><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-info">Search</span></td>
+                  <td>653</td>
+                  <td><strong class="color-green">+23</strong></td>
+                  <td class="d-sm-down-none">+43</td>
+                  <td>876</td>
+                  <td class="chart-cell d-sm-down-none">
+                    <div id="search-trend" jq-sparkline=""><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-inverse">Internal</span></td>
+                  <td>976</td>
+                  <td><strong>+101</strong></td>
+                  <td class="d-sm-down-none">-7</td>
+                  <td>844</td>
+                  <td class="chart-cell d-sm-down-none">
+                    <div id="internal-trend" jq-sparkline=""><canvas width="150" height="30" style="display: inline-block; width: 150px; height: 30px; vertical-align: top;"></canvas></div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="widget large" widget="">
+            <header>
+              <h4>
+                Chat
+              </h4>
+      
+              <div class="widget-controls">
+                <a href="#" title="Options"><i class="glyphicon glyphicon-cog"></i></a>
+                <a data-widgster="close" href="#" title="Close"><i class="glyphicon glyphicon-remove"></i></a>
+              </div>
+            </header>
+            <div chat="" class="widget-body"><div class="chat">
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 240px;"><div class="chat-messages" style="overflow: hidden; width: auto; height: 240px;">
+          <!----><div class="chat-message">
+      
+            <div class="sender float-left">
+              <div class="icon">
+                <img alt="" class="rounded-circle" src="assets/img/2.png">
+              </div>
+              <div class="time">
+                4 min
+              </div>
+            </div>
+            <div class="chat-message-body">
+              <span class="arrow"></span>
+              <div class="sender"><a href="#">Tikhon Laninga</a></div>
+              <div class="text">Hey Sam, how is it going? But I must explain to you how all this mistaken      idea of denouncing of a pleasure and praising pain was born</div>
+            </div>
+          </div><div class="chat-message">
+      
+            <div class="sender float-right">
+              <div class="icon">
+                <img alt="" class="rounded-circle" src="assets/img/1.png">
+              </div>
+              <div class="time">
+                3 min
+              </div>
+            </div>
+            <div class="chat-message-body on-left">
+              <span class="arrow"></span>
+              <div class="sender"><a href="#">Cenhelm Houston</a></div>
+              <div class="text">Pretty good. Doing my homework..  No one rejects, dislikes, or avoids        pleasure itself, because it is pleasure, but because</div>
+            </div>
+          </div><div class="chat-message">
+      
+            <div class="sender float-left">
+              <div class="icon">
+                <img alt="" class="rounded-circle" src="assets/img/2.png">
+              </div>
+              <div class="time">
+                2 min
+              </div>
+            </div>
+            <div class="chat-message-body">
+              <span class="arrow"></span>
+              <div class="sender"><a href="#">Tikhon Laninga</a></div>
+              <div class="text">Anys chance to go out? To take a trivial example, which of us ever undertakes        laborious physical exercise, except to obtain some advantage</div>
+            </div>
+          </div><div class="chat-message">
+      
+            <div class="sender float-right">
+              <div class="icon">
+                <img alt="" class="rounded-circle" src="assets/img/1.png">
+              </div>
+              <div class="time">
+                2 min
+              </div>
+            </div>
+            <div class="chat-message-body on-left">
+              <span class="arrow"></span>
+              <div class="sender"><a href="#">Cenhelm Houston</a></div>
+              <div class="text">.. Maybe 40-50 mins. I don't know exactly. On the other hand, we denounce      with righteous indignation and dislike men who are so beguiled</div>
+            </div>
+          </div><div class="chat-message">
+      
+            <div class="sender float-left">
+              <div class="icon">
+                <img alt="" class="rounded-circle" src="assets/img/2.png">
+              </div>
+              <div class="time">
+                1 min
+              </div>
+            </div>
+            <div class="chat-message-body">
+              <span class="arrow"></span>
+              <div class="sender"><a href="#">Tikhon Laninga</a></div>
+              <div class="text">Anyway sounds great! These cases are perfectly simple and easy to      distinguish.</div>
+            </div>
+          </div>
+        </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 149.223px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: block; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+        <footer class="chat-footer row">
+          <div class="col-sm-9 col-9">
+            <input class="form-control input-transparent" id="new-message" placeholder="Enter your message.." type="text">
+          </div>
+          <div class="col-sm-3 col-3">
+            <button class="btn btn-transparent btn-block" id="new-message-btn" type="button">Send</button>
+          </div>
+        </footer>
+      </div>
+      </div>
+          </section>
+        </div>
+        <div class="col-xl-4">
+          <section class="widget large" widget="">
+            <header>
+              <h4>
+                Feed
+                <span class="badge badge-success">412</span>
+              </h4>
+      
+              <div class="actions">
+                <button class="btn btn-transparent">Show All <i class="fa fa-arrow-down"></i></button>
+              </div>
+            </header>
+            <div class="widget-body">
+              <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 280px;"><div class="feed" id="feed" style="overflow: hidden; width: auto; height: 280px;">
+                <div class="wrapper">
+                  <div class="vertical-line"></div>
+                  <section class="feed-item">
+                    <div class="icon float-left">
+                      <i class="fa fa-comment"></i>
+                    </div>
+                    <div class="feed-item-body">
+                      <div class="text">
+                        <a href="#">John Doe</a> commented on <a href="#">What Makes Good Code Good</a>.
+                      </div>
+                      <div class="time float-left">
+                        3 h
+                      </div>
+                    </div>
+                  </section>
+                  <section class="feed-item">
+                    <div class="icon float-left">
+                      <i class="fa fa-check color-green"></i>
+                    </div>
+                    <div class="feed-item-body">
+                      <div class="text">
+                        <a href="#">Merge request #42</a> has been approved by <a href="#">Jessica Lori</a>.
+                      </div>
+                      <div class="time float-left">
+                        10 h
+                      </div>
+                    </div>
+                  </section>
+                  <section class="feed-item">
+                    <div class="icon float-left">
+                      <img alt="" class="rounded-circle" src="assets/img/14.png">
+                    </div>
+                    <div class="feed-item-body">
+                      <div class="text">
+                        New user <a href="#">Greg Wilson</a> registered.
+                      </div>
+                      <div class="time float-left">
+                        Today
+                      </div>
+                    </div>
+                  </section>
+                  <section class="feed-item">
+                    <div class="icon float-left">
+                      <i class="fa fa-bolt color-orange"></i>
+                    </div>
+                    <div class="feed-item-body">
+                      <div class="text">
+                        Server fail level raises above normal. <a href="#">See logs</a> for details.
+                      </div>
+                      <div class="time float-left">
+                        Yesterday
+                      </div>
+                    </div>
+                  </section>
+                  <section class="feed-item">
+                    <div class="icon float-left">
+                      <i class="fa fa-database"></i>
+                    </div>
+                    <div class="feed-item-body">
+                      <div class="text">
+                        <a href="#">Database usage report</a> is ready.
+                      </div>
+                      <div class="time float-left">
+                        Yesterday
+                      </div>
+                    </div>
+                  </section>
+                  <section class="feed-item">
+                    <div class="icon float-left">
+                      <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <div class="feed-item-body">
+                      <div class="text">
+                        <a href="#">Order #233985</a> needs additional processing.
+                      </div>
+                      <div class="time float-left">
+                        Wednesday
+                      </div>
+                    </div>
+                  </section>
+                  <section class="feed-item">
+                    <div class="icon float-left">
+                      <i class="fa fa-arrow-down"></i>
+                    </div>
+                    <div class="feed-item-body">
+                      <div class="text">
+                        <a href="#">Load more...</a>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 217.175px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: block; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+            </div>
+          </section>
+          <section class="widget widget-tabs" widget="">
+            <header>
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#stats">Users</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#report">Favorites</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#dropdown1">Commenters</a>
+                </li>
+              </ul>
+            </header>
+            <div class="widget-body tab-content">
+              <div class="tab-pane active clearfix" id="stats">
+                <h5 class="tab-header"><span class="badge badge-primary"><i class="fa fa-facebook"></i></span> Last
+                  logged-in users</h5>
+                <ul class="news-list">
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/1.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Finees Lund</a></div>
+                      <div class="position">Product Designer</div>
+                      <div class="time">Last logged-in: Mar 20, 18:46</div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/3.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Erebus Novak</a></div>
+                      <div class="position">Software Engineer</div>
+                      <div class="time">Last logged-in: Mar 23, 9:02</div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/2.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Leopoldo Reier</a></div>
+                      <div class="position">Chief Officer</div>
+                      <div class="time">Last logged-in: Jun 6, 15:34</div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/13.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Frans Garey</a></div>
+                      <div class="position">Financial Assistant</div>
+                      <div class="time">Last logged-in: Jun 8, 17:20</div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/14.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Jessica Johnsson</a></div>
+                      <div class="position">Sales Manager</div>
+                      <div class="time">Last logged-in: Jun 8, 9:13</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane" id="report">
+                <h5 class="tab-header"><i class="fa fa-star"></i> Popular contacts</h5>
+                <ul class="news-list news-list-no-hover">
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/14.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Jessica Johnsson</a></div>
+                      <div class="options">
+                        <button class="btn btn-xs btn-success">
+                          <i class="fa fa-phone"></i>
+                          Call
+                        </button>
+                        <button class="btn btn-xs btn-warning">
+                          <i class="fa fa-envelope-o"></i>
+                          Message
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/13.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Frans Garey</a></div>
+                      <div class="options">
+                        <button class="btn btn-xs btn-success">
+                          <i class="fa fa-phone"></i>
+                          Call
+                        </button>
+                        <button class="btn btn-xs btn-warning">
+                          <i class="fa fa-envelope-o"></i>
+                          Message
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/3.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Erebus Novak</a></div>
+                      <div class="options">
+                        <button class="btn btn-xs btn-success">
+                          <i class="fa fa-phone"></i>
+                          Call
+                        </button>
+                        <button class="btn btn-xs btn-warning">
+                          <i class="fa fa-envelope-o"></i>
+                          Message
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/2.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Leopoldo Reier</a></div>
+                      <div class="options">
+                        <button class="btn btn-xs btn-success">
+                          <i class="fa fa-phone"></i>
+                          Call
+                        </button>
+                        <button class="btn btn-xs btn-warning">
+                          <i class="fa fa-envelope-o"></i>
+                          Message
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/1.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Finees Lund</a></div>
+                      <div class="options">
+                        <button class="btn btn-xs btn-success">
+                          <i class="fa fa-phone"></i>
+                          Call
+                        </button>
+                        <button class="btn btn-xs btn-warning">
+                          <i class="fa fa-envelope-o"></i>
+                          Message
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane" id="dropdown1">
+                <h5 class="tab-header"><i class="fa fa-comments"></i> Top Commenters</h5>
+                <ul class="news-list">
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/13.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Frans Garey</a></div>
+                      <div class="comment">
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                        sed quia
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/1.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Finees Lund</a></div>
+                      <div class="comment">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat.
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/14.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Jessica Johnsson</a></div>
+                      <div class="comment">
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt.
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/3.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Erebus Novak</a></div>
+                      <div class="comment">
+                        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
+                        doloremque.
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img alt="" class="float-left rounded-circle" src="assets/img/2.png">
+      
+                    <div class="news-item-info">
+                      <div class="name"><a href="#">Leopoldo Reier</a></div>
+                      <div class="comment">
+                        Laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis
+                        et quasi.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="widget" widget="">
+            <header>
+              <h4>
+                Server Overview
+              </h4>
+      
+              <div class="actions">
+                <small class="text-muted float-right">2 days ago</small>
+              </div>
+            </header>
+            <div class="widget-body">
+              <ul class="server-stats">
+                <li>
+                  <div class="key float-right">CPU</div>
+                  <div class="stat">
+                    <div class="info">60% / 37°C / 3.3 Ghz</div>
+                    <div class="progress  bg-blue-light">
+                      <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" class="progress-bar progress-sm bg-danger" role="progressbar" style="width: 70%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="key float-right">Mem</div>
+                  <div class="stat">
+                    <div class="info">29% / 4GB (16 GB)</div>
+                    <div class="progress  bg-blue-light">
+                      <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="29" class="progress-bar progress-sm" role="progressbar" style="width: 29%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="key float-right">LAN</div>
+                  <div class="stat">
+                    <div class="info">6 Mb/s <i class="fa fa-caret-down"></i> &nbsp; 3 Mb/s <i class="fa fa-caret-up"></i>
+                    </div>
+                    <div class="progress  bg-blue-light">
+                      <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="48" class="progress-bar progress-sm bg-inverse" role="progressbar" style="width: 48%"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+      
+          </div>
+          <footer class="content-footer">
+            Light Blue 4.0 Angular Version - Made by <a href="https://flatlogic.com" rel="nofollow" target="_blank">Flatlogic</a>
+          </footer>
+        </main>
+  </div>

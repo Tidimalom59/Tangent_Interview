@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="reviewing">
+    <br>
+    <li *ngFor="let review of reviews" class="list-group-item d-flex justify-content-between">
+      <div class="col-3">{{review.date}}</div>
+      <div class="col-3"><a href=''>{{review.id}}</a></div>
+      <div class="col-3 text-left"><a href=''>{{review.salary}}</a></div>
+      <div class="col-3">
+          <label>Click me: <input type="checkbox" [(ngModel)]="review.type"  ng-init="checked=true" /></label><br/>
+          Show when checked:
+          <span ng-if="review.type" class="animate-if">
+            This is removed when the checkbox is unchecked.
+          </span>
+        {{review.type}}
+      </div>
+    </li>
+  </div>
+</div>
+
+  <div ng-repeat="details in myDataSet" ng-switch on="review.type">
+
+      <div ng-switch-when="P">
+          <p>Performance Increase</p>
+      </div>
+
+      <div ng-switch-when="S">
+          <p>Starting Salary</p>
+      </div>
+
+      <div ng-switch-when="A">
+          <p>Annual Increase</p>
+      </div>
+
+      <div ng-switch-when="E">
+          <p>Expectation Review</p>
+      </div>
+
+      <div ng-switch-default>
+          <p>Error</p>
+      </div>
+
+  </div>

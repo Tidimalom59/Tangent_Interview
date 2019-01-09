@@ -1,0 +1,87 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Employee Profile</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <table>
+                    <thead><strong>First Name</strong></thead>
+                    <td>{{employee1.user.first_name}}</td>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <table>
+                    <thead><strong>Last Name</strong></thead>
+                    <td>{{employee1.user.last_name}}</td>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <table>
+                    <thead><strong>Phone Number</strong></thead>
+                    <td>{{employee1.phone_number}}</td>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <table>
+                    <thead><strong>Personal Email</strong></thead>
+                    <td>{{employee1.user.email}}</td>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-8 pl-1">
+                <div class="form-group">
+                  <table>
+                    <thead><strong>Address</strong></thead>
+                    <td>{{employee1.physical_address}}</td>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <table>
+                    <thead><strong>Identity Number</strong></thead>
+                    <td>{{employee1.id_number}}</td>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <table>
+                    <thead><strong>Birthday</strong></thead>
+                    <td>{{employee1.birth_date}} (in {{employee1.days_to_birthday}} days)</td>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Postal Code</label>
+                  <input type="number" class="form-control" placeholder="1754">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

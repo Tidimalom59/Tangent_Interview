@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-fixed">
+  <a class="navbar-brand" href="dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tangent Agent Grad-111</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <li class="nav-item form-inline mr-auto">
+      <a class="nav-link employees" href="employee">Employees</a>
+      <a class="nav-link leave" href="leave">Leave</a>
+    </li>
+
+    <ul class="navbar-nav my-2 my-lg-0">
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{userlogged.user.username}} <b class="caret"></b>    <!-- TODO: remove static user and inject-->
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="profile">
+            <i class="fa fa-fw fa-user"></i> Profile
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="logout()" href="#" >
+            <i class="fa fa-fw fa-power-off"></i> Log Out
+          </a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</nav>

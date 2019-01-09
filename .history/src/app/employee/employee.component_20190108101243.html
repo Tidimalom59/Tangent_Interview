@@ -1,0 +1,43 @@
+<div class="employeePage">
+  <br>
+  <div class="container-fluid">
+    <div class="page-heading">
+      <h1>Employees -
+        <small>Tangent Employees</small>
+      </h1>
+    </div>
+    <form>
+      <!-- class="ng-valid ng-dirty ng-valid-parse ng-submitted"-->
+      <div class="form-group searchbar">
+        <div class="input-group">
+          <div class="input-group-addon search-icon"><i class="fa fa-fw fa-search"></i></div>
+          <input class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" aria-invalid="false"
+            type="text" placeholder="Search Employee" [(ngModel)]="searchText">
+        </div>
+      </div>
+    </form>
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
+        <div class="col-3 text-left">Name</div>
+        <div class="col-3 pr-4">Email</div>
+        <div class="col-3">Phone Number</div>
+        <div class="col-3">Position</div>
+      </li>
+
+      <li *ngFor="let employee of employees" class="list-group-item d-flex justify-content-between">
+        <div  *ngFor="let employee of employeeData | grdFilter: {name: searchText}; let i = index">
+        <div class="col-3">{{employee.user.first_name}} {{employee.user.last_name}}</div>
+        <div class="col-3"><a href=''>{{employee.email}}</a></div>
+        <div class="col-3 text-left"><a href=''>{{employee.phone_number}}</a></div>
+        </div>
+        <!--
+    <div class="col text-right">{{employee.birth_date}}</div>
+    <div class="col">{{employee.gender}}</div>
+    <div class="col">{{employee.years_worked}}</div>
+    <div class="col">{{employee.days_to_birthday}}</div> -->
+        <div class="col-3">{{employee.position?.name}} <strong>{{employee.position?.level}}</strong></div>
+
+      </li>
+    </ul>
+  </div>
+</div>

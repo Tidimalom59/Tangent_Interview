@@ -1,0 +1,42 @@
+.navbar {
+    background-color: #222;
+}
+.navbar-brand {
+    color: #fff;
+}
+.nav-item > a {
+    color: #999;
+}
+.nav-item:hover > a {
+    color: #fff;
+}
+
+.show-nav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .show-nav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .show-nav a:hover {
+    color: #f1f1f1;
+  }
+  @media screen and (max-height: 450px) {
+    .show-nav {padding-top: 15px;}
+    .show-nav a {font-size: 18px;}
+  }
+
+  

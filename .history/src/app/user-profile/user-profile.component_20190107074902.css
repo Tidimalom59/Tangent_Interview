@@ -1,0 +1,37 @@
+td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    width: 10%;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    height: 50px;
+    text-align: center;
+} 
+tr:nth-child(even) {background-color: #cecece;}
+
+.rounded-btn {
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
+    background: rgb(0, 67, 58);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    line-height: 40px;
+    padding: 0 25px;
+}
+.rounded-btn:hover,
+.rounded-btn:focus,
+.rounded-btn:active,
+.rounded-btn:visited {
+    color: rgb(255, 255, 255);
+    border: 2px solid rgba(255, 255, 255, 0);
+    outline: none;
+}
+
+.profilePage{
+    background-color: rgb(233, 251, 233);
+}

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="reviewing">
+    <br>
+    <li *ngFor="let review of reviews" class="list-group-item d-flex justify-content-between">
+      <div class="col-3">{{review.date}}</div>
+      <div class="col-3"><a href=''>{{review.id}}</a></div>
+      <div class="col-3 text-left"><a href=''>{{review.salary}}</a></div>
+      <div class="col-3">
+        {{review.type}}
+      </div>
+    </li>
+  </div>
+</div>
+
+  <!-- <ul class="col-3" *ngFor="let review of reviews">
+    <div *ngIf="review.type === 'P' then ">
+
+        <p>Performance Increase</p>  
+
+    </div>
+    </ul> -->
+    <div class="col-3" *ngFor="let review of reviews">
+    <ng-template  *ngIf="review.type === 'P' ;else showBlock"> </ng-template>
+    <p>
+        Performance Increase
+      </p>
+    <ng-template  #show>
+        <p>
+            Starting Salary
+          </p>
+    </ng-template>
+
+    <ng-template #showBlock>
+        <p>
+          Starting Salary
+        </p>
+      </ng-template>
+      </div>
+

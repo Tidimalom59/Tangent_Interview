@@ -1,0 +1,35 @@
+<!-- TODO: [@routerTranstion] -->
+<div class="login-page">
+  <div class="row justify-content-md-center">
+    <div class="col-md-4">
+      <img src="../assets/logo.png" width="150px" class="user-avatar" />
+      <h1>UniCorn Login</h1>
+      <hr><br>
+      <form (ngSubmit)="onLogin()" #loginForm="ngForm" name="myForm" novalidate>
+        <div class="form-content">
+          <div class="form-group">
+            <label for="email">Username</label>
+            <input type="text" class="form-control input-underline input-lg" #Username="ngModel" [(ngModel)]="user.Username"  id="username" placeholder="Enter username"
+              name="username" required>
+            <!--ngModel directive used to capture values in the controller-->
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control input-underline input-lg" #Password="ngModel" [(ngModel)]="user.Password"  id="password" placeholder="Enter password"
+              name="password" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-default rounded-btn" >Submit</button>
+        </div>
+        </div>
+
+      </form>
+
+      <div *ngIf="isLoginError" class="text-danger center error-message">
+          <i class="material-icons">ERROR</i> Incorrect Username or Password!!!
+      </div>
+    </div>
+  </div>
+</div>

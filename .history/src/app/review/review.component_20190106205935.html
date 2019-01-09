@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="reviewing">
+    <br>
+    <li *ngFor="let review of reviews" class="list-group-item d-flex justify-content-between">
+      <div class="col-3">{{review.date}}</div>
+      <div class="col-3"><a href=''>{{review.id}}</a></div>
+      <div class="col-3 text-left"><a href=''>{{review.salary}}</a></div>
+      <div class="col-3" *ngIf="review.type == 'P'">
+        <!-- {{review.type}} -->
+        <p>Performance Increase</p>
+      </div>
+    </li>
+  </div>
+</div>

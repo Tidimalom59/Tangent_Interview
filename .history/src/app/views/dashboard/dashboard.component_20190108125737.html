@@ -1,0 +1,188 @@
+<!-- start of Statistics data-->
+<div class="container-fluid mt-5">
+    <div _ngcontent-c3="" class="card mb-4 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+      <div _ngcontent-c3="" class="card-body d-sm-flex justify-content-between">
+        <h4 _ngcontent-c3="" class="mb-sm-0 pt-3"><a _ngcontent-c3="" href="dashboard"
+            target="_blank">Dashboard</a><span _ngcontent-c3=""></span></h4><span _ngcontent-c3="">Statistic Overview</span>
+        <form _ngcontent-c3="" class="d-flex md-form justify-content-center ng-untouched ng-pristine ng-valid" novalidate=""><input
+            _ngcontent-c3="" aria-label="Search" class="form-control" placeholder="Type your query" type="search"><button
+            _ngcontent-c3="" class="btn btn-primary btn-sm my-0 p" type="submit"><i _ngcontent-c3="" class="fa fa-search"></i></button></form>
+      </div>
+    </div>
+    
+    <div _ngcontent-c4="" class="row">
+        <div _ngcontent-c4="" class="col-xl-3 col-md-6 mb-r">
+          <div _ngcontent-c4="" class="card card-cascade cascading-admin-card">
+            <div _ngcontent-c4="" class="admin-up"><i _ngcontent-c4="" class="fa fa-calculator primary-color"></i>
+              <div _ngcontent-c4="" class="data">
+                <p _ngcontent-c4="">Total Number of Employees</p>
+                <h4 _ngcontent-c4=""><strong _ngcontent-c4="">
+                    <div *ngFor="let employee of employees; let i = index; let tot = count">
+                      <div class="empNo" *ngIf="employee.days_to_birthday < 31">
+                        {{tot}}
+                      </div>
+                    </div>
+                  </strong></h4>
+              </div>
+            </div>
+            <div _ngcontent-c4="" class="card-body">
+              <div _ngcontent-c4="" class="progress">
+                <div _ngcontent-c4="" aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="progress-bar bg-primary"
+                  role="progressbar" style="width: 25%"></div>
+              </div>
+              <p _ngcontent-c4="" class="card-text">Better than last week (25%)</p>
+            </div>
+          </div>
+        </div>
+        <div _ngcontent-c4="" class="col-xl-3 col-md-6 mb-r">
+          <div _ngcontent-c4="" class="card card-cascade cascading-admin-card">
+            <div _ngcontent-c4="" class="admin-up"><i _ngcontent-c4="" class="fa fa-line-chart warning-color"></i>
+              <div _ngcontent-c4="" class="data">
+                <p _ngcontent-c4="">Birthdays this Month</p>
+                <h4 _ngcontent-c4=""><strong _ngcontent-c4="">2</strong></h4>
+              </div>
+            </div>
+            <div _ngcontent-c4="" class="card-body">
+              <div _ngcontent-c4="" class="progress">
+                <div _ngcontent-c4="" aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="progress-bar bg grey darken-2"
+                  role="progressbar" style="width: 25%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div _ngcontent-c4="" class="col-xl-3 col-md-6 mb-r">
+          <div _ngcontent-c4="" class="card card-cascade cascading-admin-card">
+            <div _ngcontent-c4="" class="admin-up"><i _ngcontent-c4="" class="fa fa-pie-chart light-blue lighten-1"></i>
+              <div _ngcontent-c4="" class="data">
+                <p _ngcontent-c4="">Position Data</p>
+                <h4 _ngcontent-c4=""><strong _ngcontent-c4="">5</strong></h4>
+              </div>
+            </div>
+            <div _ngcontent-c4="" class="card-body">
+              <div _ngcontent-c4="" class="progress">
+                <div _ngcontent-c4="" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" class="progress-bar grey darken-2"
+                  role="progressbar" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div _ngcontent-c4="" class="col-xl-3 col-md-6 mb-r">
+          <div _ngcontent-c4="" class="card card-cascade cascading-admin-card">
+            <div _ngcontent-c4="" class="admin-up"><i _ngcontent-c4="" class="fa fa-bar-chart red accent-2"></i>
+              <div _ngcontent-c4="" class="data">
+                <p _ngcontent-c4="">Reviews</p>
+                <h4 _ngcontent-c4=""><strong _ngcontent-c4="">2000</strong></h4>
+              </div>
+            </div>
+            <div _ngcontent-c4="" class="card-body">
+              <div _ngcontent-c4="" class="progress">
+                <div _ngcontent-c4="" aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="progress-bar bg-primary"
+                  role="progressbar" style="width: 25%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<!-- End of Statistic data-->
+
+<!--Grid row-->
+<div class="row wow fadeIn mt-5 container-fluid">
+  <!--Card-->
+  <div class="col-md-6 mb-4">
+    <div class="card">
+
+      <!-- <div class="pieChart d-flex justify-content-center">
+        <canvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+      </div> -->
+    </div>
+  </div>
+  <!--/.Card-->
+
+  <!--Grid column-->
+  <div class="col-md-3 mb-4">
+    <!--Card-->
+    <div class="card mb-4">
+
+      <!--Card content-->
+      <div class="card-body">
+
+        <!-- List group links -->
+        <div class="list-group list-group-flush">
+          <a class="list-group-item list-group-item-action waves-effect">Number of employees
+            <span class="badge badge-success badge-pill pull-right">22%
+              <i class="fa fa-arrow-up ml-1"></i>
+            </span>
+          </a>
+          <a class="list-group-item list-group-item-action waves-effect">Seniority Number
+            <span class="badge badge-danger badge-pill pull-right">5%
+              <i class="fa fa-arrow-down ml-1"></i>
+            </span>
+          </a>
+          <a class="list-group-item list-group-item-action waves-effect">Orders
+            <span class="badge badge-primary badge-pill pull-right">14</span>
+          </a>
+          <a class="list-group-item list-group-item-action waves-effect">Issues
+            <span class="badge badge-primary badge-pill pull-right">123</span>
+          </a>
+          <a class="list-group-item list-group-item-action waves-effect">Messages
+            <span class="badge badge-primary badge-pill pull-right">8</span>
+          </a>
+        </div>
+        <!-- List group links -->
+
+      </div>
+
+    </div>
+    <!--/.Card-->
+
+
+
+  </div>
+  <!--Grid column-->
+
+</div>
+
+<div class="col col-md-9">
+    <div class="row">
+      <div class="col col-md-5">
+        <h4>Today Stats:</h4>
+            Visits<span class="pull-right strong">- 15%</span>
+             <div class="progress">
+              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="15"aria-valuemin="0" aria-valuemax="100" style="width:15%">15%</div>
+            </div>
+          
+            20 New Users<span class="pull-right strong">+ 30%</span>
+             <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="30"aria-valuemin="0" aria-valuemax="100" style="width:30%">30%</div>
+            </div>
+          
+            359 Downloads<span class="pull-right strong">+ 8%</span>
+             <div class="progress">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="8"aria-valuemin="0" aria-valuemax="100" style="width:8%">8%</div>
+            </div>
+      </div>
+      <div class="col col-md-5">
+        <h4>This Month Stats:</h4>
+            Visits<span class="pull-right strong">+ 45%</span>
+             <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="45"aria-valuemin="0" aria-valuemax="100" style="width:45%">45%</div>
+            </div>
+          
+            395 New Users<span class="pull-right strong">+ 57%</span>
+             <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="57"aria-valuemin="0" aria-valuemax="100" style="width:57%">57%</div>
+            </div>
+          
+            12.593 Downloads<span class="pull-right strong">+ 25%</span>
+             <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25"aria-valuemin="0" aria-valuemax="100" style="width:25%">25%</div>
+            </div>
+      </div>
+    </div>
+  </div>

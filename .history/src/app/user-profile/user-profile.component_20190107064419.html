@@ -1,0 +1,167 @@
+<br>
+<div class="panel-header panel-header-sm">
+</div>
+<div class="review  d-flex justify-content-center">
+  <button type="submit" class="btn btn-default rounded-btn">Review</button>
+</div>
+<div class="main-content container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-header text-center">
+          <h4 class="title">Personal Profile</h4>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-12 ">
+                <div class="form-group">
+                  <table>
+                    <tr>
+                      <th><strong>First Name</strong></th>
+                      <th><strong>Last Name</strong></th>
+                      <th><strong>Phone Number</strong></th>
+                    </tr>
+                    <tr>
+                      <td>{{employee1.user.first_name}}</td>
+                      <td>{{employee1.user.last_name}}</td>
+                      <td>{{employee1.phone_number}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 ">
+                <div class="form-group">
+                  <table>
+                    <tr>
+                      <th><strong>Personal Email</strong></th>
+                      <th><strong>Address</strong></th>
+                    </tr>
+                    <tr>
+                      <td>{{employee1.user.email}}</td>
+                      <td>{{employee1.physical_address}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <table>
+                    <tr>
+                      <th><strong>Identity Number</strong></th>
+                      <th><strong>Birthday</strong></th>
+                      <th><strong>Age</strong></th>
+                    </tr>
+                    <tr>
+                      <td>{{employee1.id_number}}</td>
+                      <td>{{employee1.birth_date}} (in {{employee1.days_to_birthday}} days)</td>
+                      <td>{{employee1.age}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <table>
+                    <tr>
+                      <th><strong>Gender</strong></th>
+                      <th><strong>Race</strong></th>
+                      <th><strong>Days to Birthday</strong></th>
+                    </tr>
+                    <tr>
+                      <td>{{employee1.gender}}</td>
+                      <td>{{employee1.race}}</td>
+                      <td>{{employee1.days_to_birthday}} days</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<!--Employee Company Details-->
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content container-fluid">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-header text-center">
+          <h4 class="title">Employee Profile</h4>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-12 ">
+                <div class="form-group">
+                  <table>
+                    <tr>
+                      <th><strong>Tax Number</strong></th>
+                      <th><strong>Email</strong></th>
+                      <th><strong>Username</strong></th>
+                    </tr>
+                    <tr>
+                      <td>{{employee1.tax_number}}</td>
+                      <td>{{employee1.email}}</td>
+                      <td>{{employee1.user.username}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 ">
+                <div class="form-group">
+                  <table>
+                    <tr>
+                      <th><strong>Start Date</strong></th>
+                      <th><strong>Next Review</strong></th>
+                    </tr>
+                    <tr>
+                      <td>{{employee1.start_date}}</td>
+                      <td>{{employee1.next_review}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <table>
+                    <tr>
+                      <th><strong>GitHub Name</strong></th>
+                      <th><strong>Years Worked</strong></th>
+                      <th><strong>Leave Remaining</strong></th>
+                    </tr>
+                    <tr>
+                      <td>{{employee1.github_user}}</td>
+                      <td>{{employee1.years_worked}}</td>
+                      <td>{{employee1.leave_remaining}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
