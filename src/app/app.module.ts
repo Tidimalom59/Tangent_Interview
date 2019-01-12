@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { ChartsModule } from 'ng2-charts';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { EmployeeComponent } from './employee/employee.component';
 import { HttpService } from './_services/http.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +15,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserService } from './_services/user.service';
 import { NotFoundComponent } from './views/error-pages/not-found/not-found.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { LeaveComponent } from './leave/leave.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +29,21 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HeaderComponent,
     UserProfileComponent,
     NotFoundComponent,
+    LeaveComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ChartsModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [HttpService, UserService],
   bootstrap: [AppComponent]
