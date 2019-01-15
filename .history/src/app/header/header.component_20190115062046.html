@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-fixed-top">
+  <a class="navbar-brand" href="dashboard">Tangent Agent Grad-111</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <li class="nav-item form-inline mr-auto">
+      <a class="nav-link employees" href="employee">Employees</a>
+
+      <div class="review d-flex justify-content-center">
+      <button type="submit" class="btn btn-default rounded-btn" data-toggle="modal" data-target="#myModal">Employee
+          Review</button>
+      <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Leave Remaining</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <li class="col-3 list-group-item bg-info">Start Date</li>
+                <div class="page-heading">
+                  <h2>Leave -
+                    <small class="ng-binding">
+                      Remaining {{leaves.leave_remaining}}
+                    </small>
+                  </h2>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+
+
+
+    <ul class="navbar-nav my-2 my-lg-0">
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          {{userlogged.user.first_name}} {{userlogged.user.last_name}}<b class="caret"></b>    <!-- TODO: remove static user and inject-->
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="profile">
+            <i class="fa fa-fw fa-user"></i> Profile
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="logout()" href="#" >
+            <i class="fa fa-fw fa-power-off"></i> Log Out
+          </a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</nav>

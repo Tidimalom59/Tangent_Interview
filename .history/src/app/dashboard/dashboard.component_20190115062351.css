@@ -1,0 +1,15 @@
+.dashboardPage{
+    background-color: rgb(233, 251, 233);
+}
+.card{
+    background-color: rgba(200, 255, 255, 0.707);
+}
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: yellow;
+    padding: 50px;
+    font-size: 20px;
+  }

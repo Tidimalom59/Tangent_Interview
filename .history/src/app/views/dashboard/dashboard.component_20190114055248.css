@@ -1,0 +1,13 @@
+.dashboardPage{
+    background-color: rgb(233, 251, 233);
+}
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  width: 20%;
+  padding-left: 20px;
+}

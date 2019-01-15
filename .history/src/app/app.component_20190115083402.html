@@ -1,0 +1,16 @@
+<!-- <div class="appPage">
+    <div class="header">
+        <app-header></app-header>
+    </div>
+
+    <router-outlet></router-outlet>
+</div> -->
+<div class="app-layout">
+    <div [hidden] = "!loading" class="loader">
+        <h4>Loading...</h4>
+        <md-progress-bar mode ="indeterminate"></md-progress-bar>
+    </div>
+    <div [hidden] = "loading" class="router-output">
+        <router-outlet></router-outlet>
+    </div>
+</div>

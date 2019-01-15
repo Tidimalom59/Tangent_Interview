@@ -1,0 +1,32 @@
+<div>
+  <div class="page-heading">
+    <h2>Leave -
+      <small class="ng-binding"> Remaining 1.00 days</small>
+    </h2>
+  </div>
+  
+
+  <div class="row">
+    <div class="card col-md-12">
+      <div class="well">
+        <form class="form-inline ng-pristine ng-valid">
+          <div class="form-group">
+            <label for="label-start-date">Start Date</label>
+            <input class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" id="label-start-date"
+              aria-invalid="false" type="date" ng-model="$ctrl.startDate">
+          </div>
+          <div class="form-group">
+            <label for="label-end-date">End Date</label>
+            <input class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" id="label-end-date" aria-invalid="false"
+              type="date" ng-model="$ctrl.endDate">
+          </div>
+          <button class="btn btn-info" type="submit" ng-click="$ctrl.filter()">Filter</button>
+          <button class="btn btn-success btn-xl pull-right" id="new-leave-button" type="button" href="#!/leave/create"
+            ui-sref="leave:create" ng-disabled="disabled">
+            <i class="glyphicon glyphicon-plus"></i> Apply For Leave
+          </button>
+        </form>
+      </div>
+    </div>
+
+    
